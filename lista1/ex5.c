@@ -17,7 +17,7 @@ int Comum(int n, int k)
 		
 	int C;
 	
-	C = Fatorial(n)/(Fatorial(k)*Fatorial(n-k)); //equação de combinação
+	C = Fatorial(n)/(Fatorial(k)*Fatorial(n-k)); //equação de combinação (coeficiente binomial)
 	return(C);
 }	
 
