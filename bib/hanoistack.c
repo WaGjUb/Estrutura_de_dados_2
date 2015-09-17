@@ -5,11 +5,12 @@ Stack* Create()
 	Stack* s;
         s = malloc(sizeof(Stack));
         s->top = NULL;
+	s->base = NULL;
         s->size = 0;
 	return(s);
 }
 
-bool Add(Stack *s, int data)
+bool Add(Stack *s, int data) //retorna falso se não foi possivel adicionar
 {
 	int val;
 
@@ -27,10 +28,13 @@ bool Add(Stack *s, int data)
 		aux->prev = s->top;
 		s->top = aux;
 		s->size++;
-
+		
+		if (size == 1)
+		{
+			s->base = aux;
+		}
 		return(true);
 	
-	return(false);
 }
 
 bool Pop(Stack *s)
@@ -45,12 +49,17 @@ bool Pop(Stack *s)
 		aux->prev = NULL;
 		free(aux);
 		s->size--;
+		
+		if (size == 0)
+		{
+			s->base == NULL;
+		}
 		return(true);
 	}
 	return(false);
 }
 
-bool NextDataRequest(Stack *s, int* val)
+bool NextDataRequest(Stack *s, int* val) //retorna falso de a pilha está vazia e verdadeiro caso contrario
 {
 	if (s->top == NULL)
 	{	

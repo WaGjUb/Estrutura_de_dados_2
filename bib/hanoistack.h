@@ -17,6 +17,7 @@ typedef struct node{
 typedef struct stack{
 	Node* top;
 	int size;
+	Node* base;
 } Stack;
 
 Stack* Create();
