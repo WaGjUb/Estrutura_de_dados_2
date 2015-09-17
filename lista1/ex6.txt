@@ -1,0 +1,14 @@
+int inter(int i)
+{
+	if (f(i) == 0) //condição de parada... substitui o while
+	{
+		return(x); //precisamos saber qual valor retornar que não altere o resultado
+	}
+
+	//..... codigo
+
+	i = g(i);
+	inter(i);
+	
+	return(y); //precisamos saber o resultado esperado da função, se for recursão de cauda y = x	
+}
