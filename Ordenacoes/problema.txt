@@ -1,0 +1,3 @@
+Enviar os algoritmos de ordenação instrumentado de forma a contar a quantidade de iterações realizadas.
+
+** Fazer para Bubblesort, SelectionSort, InsertionSort e ShellSort
