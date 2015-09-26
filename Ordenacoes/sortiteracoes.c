@@ -67,6 +67,7 @@ int* SelectionSort(int* v, int size)
 		{
 			for (int j=1; j<size; j++)
 			{
+				count++;
 				validator = true;
 				if (v2[j] < v2[j-1])
 				{
@@ -134,6 +135,7 @@ int* ShellSort(int* v, int size)
 
 			while ((v2[j - k] > aux) && (j >= k))
 			{
+				count++;
 				v2[j] = v2[j - k];
 				j = j-k;
 			}
@@ -158,36 +160,55 @@ int main()
 	int v1[]={7,13,5,8,9,2,3};
 	int size = 7;
 	int* vOrd;
+	clock_t t;
 
+ 	printf("Vetor a ser ordenado: \n");	
+	for (int i=0; i<size; i++)
+	{
+		printf("%d ", v1[i]);
+	}
+	
+	t = clock();
 	vOrd = BubbleSort(v1, size);
+	t = clock() - t;
+
+	printf("\n\nTempo de execução: %lf milisegundos\n", ((double)t*1000)/CLOCKS_PER_SEC);
 	printf("Bubble Sort\nVetor Ordenado:\n");	
 	for (int i=0; i<size; i++)
 	{
 		printf("%d ", vOrd[i]);
 	}
-	printf("\nNúmero de iterações: %d\n", count);
+	printf("\nNúmero de iterações: %d\n\n", count);
 	free(vOrd);
 
+	t = clock();
 	vOrd = SelectionSort(v1, size);
+	t = clock() - t;
+	printf("Tempo de execução: %lf milisegundos\n", ((double)t*1000)/CLOCKS_PER_SEC);
 	printf("Selection Sort\nVetor Ordenado:\n");	
 	for (int i=0; i<size; i++)
 	{
 		printf("%d ", vOrd[i]);
 	}
-	printf("\nNúmero de iterações: %d\n", count);
+	printf("\nNúmero de iterações: %d\n\n", count);
 	free(vOrd);
 
-
+	t = clock();
 	vOrd = InsertionSort(v1, size);
+	t = clock() - t;
+	printf("Tempo de execução: %lf milisegundos\n", ((double)t*1000)/CLOCKS_PER_SEC);
 	printf("Instertion Sort\nVetor Ordenado:\n");	
 	for (int i=0; i<size; i++)
 	{
 		printf("%d ", vOrd[i]);
 	}
-	printf("\nNúmero de iterações: %d\n", count);
+	printf("\nNúmero de iterações: %d\n\n", count);
 	free(vOrd);
 
+	t = clock();
 	vOrd = ShellSort(v1, size);
+	t = clock() - t;
+	printf("Tempo de execução: %lf milisegundos\n", ((double)t*1000)/CLOCKS_PER_SEC);
 	printf("Shell Sort\nVetor Ordenado:\n");	
 	for (int i=0; i<size; i++)
 	{
