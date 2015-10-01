@@ -44,8 +44,6 @@ int QuickSort(int* v, int tamanho)
 	int meio;
 	
 	meio = Partition(v,0, tamanho);
-	Partition(v,0, tamanho-meio); 
-	Partition(v, meio, tamanho);
 	Quicksort(v+1, tamanho-1);
 
 
