@@ -1,0 +1,3 @@
+qualquer vetor de N elementos que esteja invertido... por exemplo
+
+5,4,3,2,1,...,v[N-1] ou 33343,555,231,123,2,0,-123,-21321,...,v[N-1]
